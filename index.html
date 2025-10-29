@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Student Helper</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <h1>🎓 AI Student Helper</h1>
+            <div class="settings">
+                <label for="language-select">Language:</label>
+                <select id="language-select">
+                    <option value="English">English</option>
+                    <option value="Bengali">Bengali (বাংলা)</option>
+                    <option value="Hindi">Hindi (हिन्दी)</option>
+                    <!-- অন্যান্য ভাষাগুলি এখানে থাকবে -->
+                </select>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="main-container">
+            <!-- Input Section -->
+            <div class="panel input-panel">
+                <div class="panel-header">
+                    <h2>Your Request</h2>
+                </div>
+                <div class="panel-body">
+                    <div class="feature-selector">
+                        <label for="feature-select">Choose a Feature:</label>
+                        <!-- === START: New Dropdown Options === -->
+                        <select id="feature-select">
+                            <option value="ask-question">❓ Ask a Question</option>
+                            <option value="make-notes">🧾 Make Notes</option>
+                            <option value="explain-concept">📘 Explain Concept</option>
+                            <option value="mathematics">🧮 Mathematics</option>
+                            <option value="paragraph-writer">📝 Paragraph Writer</option>
+                            <option value="grammar-help">📖 English Grammar</option>
+                            <option value="create-quiz">🧩 Create Quiz</option>
+                            <option value="study-routine">🕒 Study Routine</option>
+                            <option value="fix-writing">✍️ Fix My Writing</option>
+                            <option value="translate-simplify">🌐 Translate / Simplify</option>
+                            <option value="summarize">📄 Summarize</option>
+                        </select>
+                        <!-- === END: New Dropdown Options === -->
+                    </div>
+                    <textarea id="userInput" placeholder="Enter your text or topic here..."></textarea>
+                    
+                    <!-- === START: Image Upload Section === -->
+                    <div id="image-preview-container" style="display: none;">
+                        <img id="image-preview" src="#" alt="Image Preview"/>
+                        <button id="remove-image-btn">&times;</button>
+                    </div>
+                    <label for="image-upload" class="upload-btn">📤 Upload Image</label>
+                    <input type="file" id="image-upload" accept="image/*" style="display: none;">
+                    <!-- === END: Image Upload Section === -->
+
+                    <button id="generate-btn">✨ Generate</button>
+                </div>
+            </div>
+
+            <!-- Output Section -->
+            <div class="panel output-panel">
+                <div class="panel-header">
+                    <h2>AI Response</h2>
+                    <div class="output-controls">
+                        <button id="copy-btn">📋 Copy</button>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <div id="loader" class="loader" style="display: none;"></div>
+                    <div id="output">
+                        <p class="placeholder-text">Your generated response will appear here...</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
