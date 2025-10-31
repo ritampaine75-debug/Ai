@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Configuration ---
     const apiKey = 'AIzaSyD-iGGEytWJSgAycuqAKDME-DjACm6j3pM';
     // We use gemini-1.5-flash because it's fast and supports multimodal (text + image) input
-    const modelName = 'gemini-2.5-flash';
+    const modelName = 'gemini-2.5-pro';
     const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/${modelName}:streamGenerateContent?key=${apiKey}&alt=sse`;
 
     // Variables to store uploaded image data
